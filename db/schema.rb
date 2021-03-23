@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_214635) do
+ActiveRecord::Schema.define(version: 2021_03_23_000707) do
 
   create_table "npc", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_214635) do
     t.integer "ability_scores"
     t.integer "skills"
     t.string "special_abilities"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
