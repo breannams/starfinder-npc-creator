@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_214635) do
+ActiveRecord::Schema.define(version: 2021_03_23_022854) do
 
-  create_table "npc", force: :cascade do |t|
+  create_table "npcs", force: :cascade do |t|
     t.string "name"
     t.integer "cr_rating"
     t.integer "level"
     t.integer "exp"
     t.string "species"
-    t.string "class"
+    t.string "npc_class"
     t.integer "hp"
     t.integer "eac"
     t.integer "kac"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_214635) do
     t.string "special_abilities"
     t.string "optional_info"
     t.integer "user_id"
-    t.index ["user_id"], name: "index_npc_on_user_id"
+    t.index ["user_id"], name: "index_npcs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,7 +1,7 @@
 class CreateNpcs < ActiveRecord::Migration[6.1]
   def change
 
-    create_table :npc do |t|
+    create_table :npcs do |t|
       t.string :name
       t.integer :cr_rating
       t.integer :level
