@@ -10,7 +10,7 @@ class SignupLoginController < ApplicationController
         @user.save
         session[:user_id] = @user.id
         if @user.save
-            redirect to '/sessions/login'
+            redirect to '/users/home'
         else 
             redirect to '/registrations/failure'
         end
@@ -25,14 +25,18 @@ class SignupLoginController < ApplicationController
     end
 
     post '/sessions' do
-        @user = User.find_by(email: params[:email], password: params[:password])
-        if @user
+        @user = User.find_by(email: params[:email])
+        if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect to '/users/home'
-         
+        else
+         redirect to '/sessions/failure'
         end
-        redirect to '/sessions/login'
         
+    end
+
+    get '/sessions/failure' do
+        erb :'/sessions/failure'
     end
 
     get '/sessions/logout' do
