@@ -1,0 +1,4 @@
+class NpcController < ApplicationController
+
+
+end
