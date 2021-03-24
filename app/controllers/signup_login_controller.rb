@@ -2,7 +2,11 @@ class SignupLoginController < ApplicationController
    
 
     get '/registrations/signup' do
-        erb :'/registrations/signup'
+        if !logged_in?
+            erb :'/registrations/signup'
+        else
+            redirect to '/users/home'
+        end
     end
     
     post '/registrations' do
@@ -35,6 +39,11 @@ class SignupLoginController < ApplicationController
         
     end
 
+    get '/users/home' do
+        @user = User.find(session[:user_id])
+        erb :'/users/home'
+    end
+
     get '/sessions/failure' do
         erb :'/sessions/failure'
     end
@@ -44,9 +53,5 @@ class SignupLoginController < ApplicationController
         redirect to '/'
     end
     
-    get '/users/home' do
-        @user = User.find(session[:user_id])
-        erb :'/users/home'
-    end
         
 end
