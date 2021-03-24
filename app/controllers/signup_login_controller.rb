@@ -16,12 +16,8 @@ class SignupLoginController < ApplicationController
         if @user.save
             redirect to '/users/home'
         else 
-            redirect to '/registrations/failure'
+            erb :'/registrations/error'
         end
-    end
-
-    get '/registrations/failure' do
-        erb :'/registrations/failure'
     end
 
     get '/sessions/login' do
@@ -34,19 +30,20 @@ class SignupLoginController < ApplicationController
           session[:user_id] = @user.id
           redirect to '/users/home'
         else
-         redirect to '/sessions/failure'
+            erb :'/sessions/error'
         end
         
     end
 
     get '/users/home' do
+        if logged_in?
         @user = User.find(session[:user_id])
         erb :'/users/home'
+        else
+            erb :'/users/error'
+        end
     end
 
-    get '/sessions/failure' do
-        erb :'/sessions/failure'
-    end
 
     get '/sessions/logout' do
         session.clear
