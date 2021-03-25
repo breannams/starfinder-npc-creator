@@ -1,5 +1,5 @@
 require './config/environment'
 
 use NpcController
-use SignupLoginController
+use SignupLoginLogoutController
 run ApplicationController

@@ -1,4 +1,4 @@
-class SignupLoginController < ApplicationController
+class SignupLoginLogoutController < ApplicationController
    
 
     get '/registrations/signup' do
@@ -10,7 +10,7 @@ class SignupLoginController < ApplicationController
     end
     
     post '/registrations' do
-        @user = User.new(username: params[:username], email: params[:email], password: params[:password])
+        @user = User.new(username: params[:username], password: params[:password])
         @user.save
         session[:user_id] = @user.id
         if @user.save
@@ -25,7 +25,7 @@ class SignupLoginController < ApplicationController
     end
 
     post '/sessions' do
-        @user = User.find_by(email: params[:email])
+        @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect to '/users/home'
