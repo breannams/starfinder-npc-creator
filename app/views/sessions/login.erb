@@ -1,9 +1,13 @@
+<div id='flash' class='error'>
+  <%= flash[:error] %>
+</div>
+
 <h1>Log In Below:</h1>
 
 <form method = "post" action = "/sessions">
 
-    <label>Username: <input type = "text" name = "username"><br></label>
-    <label>Password: <input type = "password" name = "password"><br></label>
+   Username: <input type = "text" name = "username"><br>
+    Password: <input type = "password" name = "password"><br>
 
     <p><input type = "submit" value = "Log In"></p>
 

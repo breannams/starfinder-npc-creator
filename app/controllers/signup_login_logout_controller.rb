@@ -1,6 +1,7 @@
-class SignupLoginLogoutController < ApplicationController
-   
 
+class SignupLoginLogoutController < ApplicationController
+ 
+   
     get '/registrations/signup' do
         if !logged_in?
             erb :'/registrations/signup'
@@ -10,13 +11,16 @@ class SignupLoginLogoutController < ApplicationController
     end
     
     post '/registrations' do
-        @user = User.new(username: params[:username], password: params[:password])
-        @user.save
-        session[:user_id] = @user.id
+        @user = User.create(username: params[:username], password: params[:password])
+    
         if @user.save
+            session[:user_id] = @user.id
+
+            flash[:success] = "Thanks for signing up!!"
             redirect to '/users/home'
-        else 
-            erb :'/registrations/error'
+        else
+            flash[:error] = "The information you entered is not valid."
+            erb :'/registrations/signup'
         end
     end
 
@@ -30,7 +34,8 @@ class SignupLoginLogoutController < ApplicationController
           session[:user_id] = @user.id
           redirect to '/users/home'
         else
-            erb :'/sessions/error'
+            flash[:error] = "The username or password you entered is incorrect. Please try again."
+            erb :'/sessions/login'
         end
         
     end
@@ -40,7 +45,7 @@ class SignupLoginLogoutController < ApplicationController
         @user = User.find(session[:user_id])
         erb :'/users/home'
         else
-            erb :'/users/error'
+          erb :'/users/error'
         end
     end
 
@@ -49,6 +54,11 @@ class SignupLoginLogoutController < ApplicationController
         session.clear
         redirect to '/'
     end
-    
+
+    helpers do
+        def flash_types
+          [:success, :notice, :warning, :error]
+        end
+      end
         
 end
