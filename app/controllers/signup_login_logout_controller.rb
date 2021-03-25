@@ -11,17 +11,16 @@ class SignupLoginLogoutController < ApplicationController
     end
     
     post '/registrations' do
-        @user = User.create(username: params[:username], password: params[:password])
-    
+        @user = User.new(username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
+        @user.save
+        session[:user_id] = @user.id
         if @user.save
-            session[:user_id] = @user.id
-
-            flash[:success] = "Thanks for signing up!!"
             redirect to '/users/home'
         else
             flash[:error] = "The information you entered is not valid."
             erb :'/registrations/signup'
         end
+    
     end
 
     get '/sessions/login' do
@@ -55,10 +54,4 @@ class SignupLoginLogoutController < ApplicationController
         redirect to '/'
     end
 
-    helpers do
-        def flash_types
-          [:success, :notice, :warning, :error]
-        end
-      end
-        
 end
