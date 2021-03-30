@@ -1,45 +1,10 @@
 
-<style>
-h2{text-align: center;}
-
-</style>
+<h1> Welcome <%= current_user.username %></h1>
 
 
+ 
+<h2><a href = '/npcs'>View all of your NPCs</a></h2>
 
-<h1> Welcome <%= current_user.username %>, Here are your NPCs:</h1>
-
-
-    <% @npcs.each do |npc| %>
-     <p><b><h2>
-     Creature Name: <%= npc.name %> 
-     &nbsp; &nbsp; &nbsp; CR:<%= npc.cr_rating%> 
-     &nbsp; &nbsp; &nbsp; Level: <%= npc.level %>
-     </h2></b></p>
-     
-     <ul>
-        <h4><li>EXP for encounter: <%=npc.exp%></li>
-        <li>Species: <%= npc.species %></li>
-        <li>Class: <%= npc.npc_class%></li></h4>
-
-        <h3><u> Defensive Stats:</u></h3>
-
-        <h4><li>HP: <%=npc.hp%></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li></h4>
-    </ul>
-    <br></br>
-        
-        <p><%puts%> Edit or Delete this character</p>
-        <%end%>
-
-
-
-
-
-<h2><label><a href = '/npcs/new'>create a new NPC </a></label></h2>
+<h2><a href = '/npcs/new'>create a new NPC </a></h2>
 
 <a href= "/sessions/logout">Log Out </a>
