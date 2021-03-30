@@ -11,8 +11,13 @@ class NpcController < ApplicationController
     end
 
     get '/npcs/new' do
+        if logged_in?
         @user = current_user
         erb :'npcs/new'
+        else 
+            flash[:error] = "You must be logged in first."
+            redirect to '/'
+        end
     end
 
     post '/npcs' do

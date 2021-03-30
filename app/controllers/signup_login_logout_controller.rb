@@ -51,7 +51,9 @@ class SignupLoginLogoutController < ApplicationController
 
 
     get '/sessions/logout' do
+        if logged_in?
         session.clear
+        end
         redirect to '/'
     end
 
