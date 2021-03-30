@@ -7,6 +7,7 @@ class NpcController < ApplicationController
         erb :'npcs/index'
         else
             redirect to '/'
+        end
     end
 
     get '/npcs/new' do
@@ -26,6 +27,7 @@ class NpcController < ApplicationController
         erb :'npcs/show'
         else
             redirect to '/'
+        end
     end
 
     get '/npcs/:id/edit' do
@@ -34,6 +36,7 @@ class NpcController < ApplicationController
         erb :'npcs/edit'
         else
             redirect to '/'
+        end
     end
 
     patch '/npcs/:id' do

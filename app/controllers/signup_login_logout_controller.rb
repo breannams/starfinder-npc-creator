@@ -40,6 +40,7 @@ class SignupLoginLogoutController < ApplicationController
     end
 
     get '/users/home' do
+        @npcs = Npc.all
         if logged_in?
         @user = User.find(session[:user_id])
         erb :'/users/home'
