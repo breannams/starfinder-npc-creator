@@ -45,7 +45,7 @@ class NpcController < ApplicationController
     end
 
     patch '/npcs/:id' do
-        @npc = Npc.find_by_id(params[:id]
+        @npc = Npc.find_by_id(params[:id])
         
         if logged_in?
             @npc.name = params[:name]
@@ -53,7 +53,7 @@ class NpcController < ApplicationController
             @npc.level = params[:level]
             @npc.exp = params[:exp]
             @npc.species = params[:species]
-            @npc.class = params[:class]
+            @npc.class = params[:npc_class]
             @npc.hp = params[:hp]
             @npc.eac = params[:eac]
             @npc.kac = params[:kac]
@@ -61,23 +61,24 @@ class NpcController < ApplicationController
             @npc.ref_save = params[:ref_save]
             @npc.will_save = params[:will_save]
             @npc.speed = params[:speed]
-            @npc.master_skill = params[:]
-            @npc.good_skill = params[:]
-            # @npc.ability_mod1 = params[:]
-            # @npc.ability_mod2 = params[:]
-            # @npc.ability_mod3 = params[:]
-            #@npc.offense_ability
-            #@npc.defense_ability
-            #@npc.immunity
-            #@npc.melee
-            #@npc.ranged
-            @npc.special_abilities
-            @npc.optional_info
+            @npc.master_skill = params[:master_skill]
+            @npc.good_skill = params[:good_skill]
+            @npc.ability_mod1 = params[:ability_mod1]
+            @npc.ability_mod2 = params[:ability_mod1]
+            @npc.ability_mod3 = params[:ability_mod1]
+            @npc.offense_ability = params[:offense_ability]
+            @npc.defense_ability = params[:defense_ability]
+            @npc.immunities = params[:immunities]
+            @npc.melee = params[:melee]
+            @npc.ranged = params[:ranged]
+            @npc.special_ability = params[:special_ability]
+            @npc.optional_info = params[:optional_info]
+            
             @npc.save
             redirect to '/npcs/#{@npc.id}'
         else
             redirect to '/'
-    
+        end
      end
 
     delete '/npcs/:id/delete' do

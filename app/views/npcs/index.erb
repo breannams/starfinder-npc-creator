@@ -1,7 +1,6 @@
 
 <style>
 h2{text-align: center;}
-
 </style>
 
 
@@ -27,22 +26,29 @@ h2{text-align: center;}
         <li>Energy Armor Class: <%=npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=npc.kac%></li>
         <h4>Saving Throws:</h4>
         <li>Fortitude: <%=npc.fort_save%>; &nbsp; &nbsp; Reflex: <%=npc.ref_save%>; &nbsp; &nbsp; Will: <%=npc.will_save%></li>
+        <li>Defensive Ability: <%=npc.defense_ability%></li>
+        <li>Immunities: <%=npc.immunities%></li>
         
         <h3><u>Offensive Stats:</u></h3>
         <li>Speed: <%= npc.speed%></li>
+        <li>Melee Attacks: <%= npc.melee%></li>
+        <li>Ranged Attacks: <%= npc.ranged%></li>
+        <li>Offensive Ability: <%=npc.offense_ability%></li>
 
         <h3><u>Ability Score Modifiers:</u></h3>
-        <li>1st:</li>
-        <li>2nd:</li>
-        <li>3rd:</li>
+        <li>1st: <%= npc.ability_mod1%></li>
+        <li>2nd: <%= npc.ability_mod1%></li>
+        <li>3rd: <%= npc.ability_mod1%></li>
 
         <h3><u>Skills:</u></h3>
         <li>Master Skill: <%=npc.master_skill%></li>
         <li>Good Skill: <%=npc.good_skill%></li>
-        <li>Special Ability: <%=npc.special_abilities%></li>
+        <li>Special Ability: <%=npc.special_ability%></li>
         
+    
         <h3><u>Additional Notes/Info:</u></h3>
-        <%=npc.optional_info%>
+        <li>Gear: <%=npc.gear%></li>
+        <li>Any other notes: <%=npc.optional_info%></li>
 
     </ul>
     <br></br>
