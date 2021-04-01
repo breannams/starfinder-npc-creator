@@ -1,7 +1,7 @@
 class NpcController < ApplicationController
 
     get '/npcs' do
-        if logged_in? && current_user
+        if logged_in?
             
             @npcs = Npc.all
         erb :'npcs/index'
@@ -11,7 +11,7 @@ class NpcController < ApplicationController
     end
 
     get '/npcs/new' do
-        if logged_in? && current_user
+        if logged_in?
         erb :'npcs/new'
         else 
             flash[:error] = "You must be logged in first."
@@ -21,23 +21,29 @@ class NpcController < ApplicationController
 
     post '/npcs' do
         @npc = Npc.create(params[:npcs])
-        redirect to '/npcs/#{@npc.id}'
+        if @npc.save
+        redirect to "/npcs/#{@npc.id}"
+        else
+            redirect to '/npcs/new'
+        end
     end
 
     get '/npcs/:id' do
-        if logged_in? && current_user
-            @npc = Npc.find_by_id(params[:id])
+        @npc = Npc.find_by_id(params[:id])
+        if logged_in? 
         erb :'npcs/show'
         else
+            flash[:error] = "You must be logged in first."
             redirect to '/'
         end
     end
 
     get '/npcs/:id/edit' do
         @npc = Npc.find_by_id(params[:id])
-        if logged_in? && current_user
+        if logged_in?
         erb :'npcs/edit'
         else
+            flash[:error] = "You must be logged in first."
             redirect to '/'
         end
     end
@@ -45,35 +51,12 @@ class NpcController < ApplicationController
     patch '/npcs/:id' do
         @npc = Npc.find_by_id(params[:id])
         
-        
-            @npc.name = params[:name]
-            @npc.cr_rating = params[:cr_rating]
-            @npc.level = params[:level]
-            @npc.exp = params[:exp]
-            @npc.species = params[:species]
-            @npc.npc_class = params[:npc_class]
-            @npc.hp = params[:hp]
-            @npc.eac = params[:eac]
-            @npc.kac = params[:kac]
-            @npc.fort_save = params[:fort_save]
-            @npc.ref_save = params[:ref_save]
-            @npc.will_save = params[:will_save]
-            @npc.speed = params[:speed]
-            @npc.master_skill = params[:master_skill]
-            @npc.good_skill = params[:good_skill]
-            @npc.ability_mod1 = params[:ability_mod1]
-            @npc.ability_mod2 = params[:ability_mod1]
-            @npc.ability_mod3 = params[:ability_mod1]
-            @npc.offense_ability = params[:offense_ability]
-            @npc.defense_ability = params[:defense_ability]
-            @npc.immunities = params[:immunities]
-            @npc.melee = params[:melee]
-            @npc.ranged = params[:ranged]
-            @npc.special_ability = params[:special_ability]
-            @npc.optional_info = params[:optional_info]
+        if @npc && @npc.update(params[:npcs])
             
-            @npc.save
             redirect to "/npcs/#{@npc.id}"
+        else
+            redirect to "/npcs/#{@npc.id}/edit"
+        end
      end
 
     delete '/npcs/:id' do

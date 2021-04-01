@@ -5,10 +5,10 @@ Specs:
  [x]Include more than one model class (e.g. User, Post, Category) - 2 models, a User and an NPC model.
  [x]Include at least one has_many relationship on your User model (e.g. User has_many Posts) - User has_many npcs
  [x]Include at least one belongs_to relationship on another model (e.g. Post belongs_to User) - Npcs belongs_to user
- [x]Include user accounts with unique login attribute (username or email) - User can signup/login with email and password & user class validates their username,email & password.
- Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+ [x]Include user accounts with unique login attribute (username or email) - User can signup/login with email and password & user class validates uniqueness of their username,email & password.
+ [x]Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying - Can create, see all or one, edit, and delete npcs.
  Ensure that users can't modify content created by other users
- Include user input validations
+ [x]Include user input validations - Used validate_presence_of for username, password, & password confirmation in user class.
  [x]BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new) - used rack-flash to create errors for signup/login views
  Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 

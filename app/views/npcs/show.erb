@@ -10,8 +10,8 @@
 
         <h3><u> Defensive Stats:</u></h3>
 
-        <li>Hit Points: <%=@npc.hp%>; &nbsp; &nbsp; Resolve Points: <%= npc.rp%></li>
-        <li>Energy Armor Class: <%=@npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=npc.kac%></li>
+        <li>Hit Points: <%=@npc.hp%>; &nbsp; &nbsp; Resolve Points: <%= @npc.rp%></li>
+        <li>Energy Armor Class: <%=@npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=@npc.kac%></li>
         <h4>Saving Throws:</h4>
         <li>Fortitude: <%=@npc.fort_save%>; &nbsp; &nbsp; Reflex: <%=@npc.ref_save%>; &nbsp; &nbsp; Will: <%=@npc.will_save%></li>
         <li>Defensive Ability: <%=@npc.defense_ability%></li>
@@ -41,10 +41,10 @@
     </ul>
     <br></br>
     
-        <p><%puts%> <a href= '/npcs/<%=npc.id%>/edit'>Edit</a> this npc.</p>
+        <p><%puts%> <a href= '/npcs/<%= @npc.id%>/edit'>Edit</a> this npc.</p>
     
 
-    <p><form action="/npcs/<%= npc.id %>" method="POST">
+    <p><form action="/npcs/<%= @npc.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input type="submit" value="delete">
     </form> </p>

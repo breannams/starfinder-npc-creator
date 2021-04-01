@@ -6,4 +6,3 @@ add a loot column for npcs
 
 Add a spell option
 
-Fix post method for creating an npc.
