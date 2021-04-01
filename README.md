@@ -1,7 +1,7 @@
 
 # Starfinder NPC Creator
 
-This ruby Gem 
+This ruby Gem allows a user to open a website, sign up & login to create, edit, or delete NPCs for the table-top rpg game Starfinder.
 
 ## Installation
 
