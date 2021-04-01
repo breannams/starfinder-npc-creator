@@ -1,1 +1,50 @@
-<h1> TESTING THIS SHOW PAGE </h1>
+<h1>Creature Name: <%= @npc.name %>
+     &nbsp; &nbsp; &nbsp; CR:<%= @npc.cr_rating%> 
+     &nbsp; &nbsp; &nbsp; Level: <%= @npc.level %>
+     </h1>
+     
+     <ul>
+        <h4><li>EXP for encounter: <%=@npc.exp%></li>
+        <li>Species: <%= @npc.species %></li>
+        <li>Class: <%= @npc.npc_class%></li></h4>
+
+        <h3><u> Defensive Stats:</u></h3>
+
+        <li>Hit Points: <%=@npc.hp%>; &nbsp; &nbsp; Resolve Points: <%= npc.rp%></li>
+        <li>Energy Armor Class: <%=@npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=npc.kac%></li>
+        <h4>Saving Throws:</h4>
+        <li>Fortitude: <%=@npc.fort_save%>; &nbsp; &nbsp; Reflex: <%=@npc.ref_save%>; &nbsp; &nbsp; Will: <%=@npc.will_save%></li>
+        <li>Defensive Ability: <%=@npc.defense_ability%></li>
+        <li>Immunities: <%=@npc.immunities%></li>
+
+        <h3><u>Offensive Stats:</u></h3>
+        <li>Speed: <%= @npc.speed%></li>
+        <li>Melee Attacks: <%= @npc.melee%></li>
+        <li>Ranged Attacks: <%= @npc.ranged%></li>
+        <li>Offensive Ability: <%=@npc.offense_ability%></li>
+
+        <h3><u>Ability Score Modifiers:</u></h3>
+        <li>1st: <%= @npc.ability_mod1%></li>
+        <li>2nd: <%= @npc.ability_mod2%></li>
+        <li>3rd: <%= @npc.ability_mod3%></li>
+
+        <h3><u>Skills:</u></h3>
+        <li>Master Skill: <%=@npc.master_skill%></li>
+        <li>Good Skill: <%=@npc.good_skill%></li>
+        <li>Special Ability: <%=@npc.special_ability%></li>
+        
+    
+        <h3><u>Additional Notes/Info:</u></h3>
+        <li>Gear: <%=@npc.gear%></li>
+        <li>Any other notes: <%=@npc.optional_info%></li>
+
+    </ul>
+    <br></br>
+    
+        <p><%puts%> <a href= '/npcs/<%=npc.id%>/edit'>Edit</a> this npc.</p>
+    
+
+    <p><form action="/npcs/<%= npc.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="delete">
+    </form> </p>

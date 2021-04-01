@@ -12,7 +12,6 @@ class NpcController < ApplicationController
 
     get '/npcs/new' do
         if logged_in?
-        @user = current_user
         erb :'npcs/new'
         else 
             flash[:error] = "You must be logged in first."
@@ -22,7 +21,6 @@ class NpcController < ApplicationController
 
     post '/npcs' do
         @npc = Npc.create(params)
-        @user = current_user
         redirect to '/npcs/#{@npc.id}'
     end
 
@@ -47,7 +45,7 @@ class NpcController < ApplicationController
     patch '/npcs/:id' do
         @npc = Npc.find_by_id(params[:id])
         
-        if logged_in?
+        
             @npc.name = params[:name]
             @npc.cr_rating = params[:cr_rating]
             @npc.level = params[:level]
@@ -76,9 +74,6 @@ class NpcController < ApplicationController
             
             @npc.save
             redirect to "/npcs/#{@npc.id}"
-        else
-            redirect to '/'
-        end
      end
 
     delete '/npcs/:id' do
