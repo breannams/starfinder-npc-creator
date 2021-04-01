@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "random_generated_number"
-    use Rack::Flash
+    use Rack::Flash, :sweep => true
     
   end
 

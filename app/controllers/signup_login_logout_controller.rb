@@ -17,7 +17,7 @@ class SignupLoginLogoutController < ApplicationController
         if @user.save
             redirect to '/users/home'
         else
-            flash[:error] = "The information you entered is not valid."
+            flash.now[:error] = "The information you entered is not valid."
             erb :'/registrations/signup'
         end
     
@@ -33,7 +33,7 @@ class SignupLoginLogoutController < ApplicationController
           session[:user_id] = @user.id
           redirect to '/users/home'
         else
-            flash[:error] = "The username or password you entered is incorrect. Please try again."
+            flash.now[:error] = "The username or password you entered is incorrect. Please try again."
             erb :'/sessions/login'
         end
         

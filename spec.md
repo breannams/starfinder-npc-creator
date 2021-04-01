@@ -9,7 +9,7 @@ Specs:
  Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
  Ensure that users can't modify content created by other users
  Include user input validations
- BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+ [x]BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new) - used rack-flash to create errors for signup/login views
  Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
 Confirm
