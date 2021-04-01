@@ -1,8 +1,8 @@
 class NpcController < ApplicationController
 
     get '/npcs' do
-        if logged_in?
-            @user = current_user
+        if logged_in? && current_user
+            
             @npcs = Npc.all
         erb :'npcs/index'
         else
@@ -11,7 +11,7 @@ class NpcController < ApplicationController
     end
 
     get '/npcs/new' do
-        if logged_in?
+        if logged_in? && current_user
         erb :'npcs/new'
         else 
             flash[:error] = "You must be logged in first."
@@ -20,12 +20,12 @@ class NpcController < ApplicationController
     end
 
     post '/npcs' do
-        @npc = Npc.create(params)
+        @npc = Npc.create(params[:npcs])
         redirect to '/npcs/#{@npc.id}'
     end
 
     get '/npcs/:id' do
-        if logged_in?
+        if logged_in? && current_user
             @npc = Npc.find_by_id(params[:id])
         erb :'npcs/show'
         else
@@ -35,7 +35,7 @@ class NpcController < ApplicationController
 
     get '/npcs/:id/edit' do
         @npc = Npc.find_by_id(params[:id])
-        if logged_in? && current_user == @npc.user
+        if logged_in? && current_user
         erb :'npcs/edit'
         else
             redirect to '/'

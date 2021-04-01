@@ -5,3 +5,5 @@ Go back in study group to figure out why set :method_override, true
 add a loot column for npcs
 
 Add a spell option
+
+Fix post method for creating an npc.
