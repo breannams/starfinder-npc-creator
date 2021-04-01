@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "random_generated_number"
     use Rack::Flash
+    
   end
 
   get "/" do

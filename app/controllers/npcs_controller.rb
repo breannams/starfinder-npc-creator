@@ -21,7 +21,7 @@ class NpcController < ApplicationController
     end
 
     post '/npcs' do
-        @npc = Npc.create(params, user: current_user)
+        @npc = Npc.create(params)
         @user = current_user
         redirect to '/npcs/#{@npc.id}'
     end
@@ -36,7 +36,7 @@ class NpcController < ApplicationController
     end
 
     get '/npcs/:id/edit' do
-        @npc = Npc.find_by_id(param[:id])
+        @npc = Npc.find_by_id(params[:id])
         if logged_in? && current_user == @npc.user
         erb :'npcs/edit'
         else
@@ -53,7 +53,7 @@ class NpcController < ApplicationController
             @npc.level = params[:level]
             @npc.exp = params[:exp]
             @npc.species = params[:species]
-            @npc.class = params[:npc_class]
+            @npc.npc_class = params[:npc_class]
             @npc.hp = params[:hp]
             @npc.eac = params[:eac]
             @npc.kac = params[:kac]
@@ -75,17 +75,16 @@ class NpcController < ApplicationController
             @npc.optional_info = params[:optional_info]
             
             @npc.save
-            redirect to '/npcs/#{@npc.id}'
+            redirect to "/npcs/#{@npc.id}"
         else
             redirect to '/'
         end
      end
 
-    delete '/npcs/:id/delete' do
-        @npc = find_by_id(params[:id])
-        
+    delete '/npcs/:id' do
+       @npc = Npc.find_by_id(params[:id])
+       @npc.delete
         redirect to '/npcs'
-        
     end
 
 end
