@@ -1,10 +1,9 @@
 
-<style>
-h2{color}
-</style>
 <h1>Your NPCs:</h1>
 
-
+<% if @npcs.empty? %>
+    You have no NPCs yet! You can create one <a href = '/npcs/new'>here </a>
+    <%else%>
     <% @npcs.each do |npc| %>
      <ol><p><h2>
      Creature Name: <%= npc.name %>
@@ -60,4 +59,4 @@ h2{color}
     <br></br>
     <br></br>
         <%end%>
-
+<%end%>

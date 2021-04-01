@@ -3,9 +3,10 @@ class NpcController < ApplicationController
     get '/npcs' do
         if logged_in?
             
-            @npcs = Npc.all
+            @npcs = current_user.npcs.all
         erb :'npcs/index'
         else
+            flash[:error] = "You must be logged in first."
             redirect to '/'
         end
     end
@@ -20,7 +21,7 @@ class NpcController < ApplicationController
     end
 
     post '/npcs' do
-        @npc = Npc.create(params[:npcs])
+        @npc = current_user.npcs.create(params[:npcs])
         if @npc.save
         redirect to "/npcs/#{@npc.id}"
         else

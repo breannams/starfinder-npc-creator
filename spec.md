@@ -7,10 +7,10 @@ Specs:
  [x]Include at least one belongs_to relationship on another model (e.g. Post belongs_to User) - Npcs belongs_to user
  [x]Include user accounts with unique login attribute (username or email) - User can signup/login with email and password & user class validates uniqueness of their username,email & password.
  [x]Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying - Can create, see all or one, edit, and delete npcs.
- Ensure that users can't modify content created by other users
+ [x]Ensure that users can't modify content created by other users - used current_user in controller so users cant see/edit/delete npcs that aren't theirs.
  [x]Include user input validations - Used validate_presence_of for username, password, & password confirmation in user class.
  [x]BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new) - used rack-flash to create errors for signup/login views
- Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+ [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
 Confirm
 
