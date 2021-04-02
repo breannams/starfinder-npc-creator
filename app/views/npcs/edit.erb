@@ -5,53 +5,53 @@ h1{
 </style>
 
 
-<h1><u>Edit Your NPC</h1><u>
+<h1><u>Edit Your NPC</h1></u>
 
 <p><form action="/npcs/<%= @npc.id %>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-<h3><u>Basic Information:</u></h3>
-<p>Name: <input type = "text" name="npcs[name]" value = "<%=@npc.name%>"></p>
-<p>CR: <input type = "text" name="npcs[cr_rating]" value = "<%= @npc.cr_rating %>"></p>
-<p>Level:<input type = "text" name="npcs[level]" value = "<%=@npc.level%>"></p>
-<p>Experience points for encounter:<input type = "text" name="npcs[exp]" value = "<%= @npc.exp%>"></p>
-<p>Species: <input type = "text" name="npcs[species]" value = "<%= @npc.species%>"></p>
-<p>Class: <input type = "text" name="npcs[npc_class]" value = "<%= @npc.npc_class%>"></p>
+<ul>
+    <h3><u>Basic Information:</u></h3>
+    <li>Name: <input type = "text" name="npcs[name]" value = "<%=@npc.name%>"></li>
+    <li>CR: <input type = "text" name="npcs[cr_rating]" value = "<%= @npc.cr_rating %>"></li>
+    <li>Level: <input type = "text" name="npcs[level]" value = "<%=@npc.level%>"></li>
+    <li>Experience points for encounter: <input type = "text" name="npcs[exp]" value = "<%= @npc.exp%>"></li>
+    <li>Species: <input type = "text" name="npcs[species]" value = "<%= @npc.species%>"></li>
+    <li>Class: <input type = "text" name="npcs[npc_class]" value = "<%= @npc.npc_class%>"></li>
 
-<h3><u>Defensive Stats:</u></h3>
-<p>Hp: <input type = "text" name="npcs[hp]" value = "<%= @npc.hp%>"></p>
-<p>Resolve Points: <input type = "text" name="npcs[rp]" value = "<%=@npc.rp %>"></p>
-<p>Energy Armor Class: <input type = "text" name="npcs[eac]" value = "<%= @npc.eac%>"></p>
-<p>Kinetic Armor Class:<input type = "text" name="npcs[kac]" value = "<%= @npc.kac%>"></p>
-<p>Defensive Ability: <input type = "text" name="npcs[defense_ability]" value = "<%= @npc.offense_ability%>"</p>
-<p>Immunities: <input type = "text" name="npcs[immunities]" value = "<%=@npc.immunities %>"></p>    
+    <h3><u>Defensive Stats:</u></h3>
+    <li>Hp: <input type = "text" name="npcs[hp]" value = "<%= @npc.hp%>"></li>
+    <li>Resolve Points: <input type = "text" name="npcs[rp]" value = "<%=@npc.rp %>"></li>
+    <li>Energy Armor Class: <input type = "text" name="npcs[eac]" value = "<%= @npc.eac%>"></li>
+    <li>Kinetic Armor Class: <input type = "text" name="npcs[kac]" value = "<%= @npc.kac%>"></li>
+    <li>Defensive Ability: <input type = "text" name="npcs[defense_ability]" value = "<%= @npc.offense_ability%>"</li>
+    <li>Immunities: <input type = "text" name="npcs[immunities]" value = "<%=@npc.immunities %>"></li>    
 
-<h3><u>Saving Throws:</u></h3>
-<p>Fortitude: <input type = "text" name="npcs[fort_save]" value = "<%= @npc.fort_save%>"></p>
-<p>Reflex: <input type = "text" name="npcs[ref_save]" value = "<%= @npc.ref_save%>"></p>
-<p>Will: <input type = "text" name="npcs[will_save]" value = "<%= @npc.will_save%>"></p>
-
-
-<h3><u>Offensive Stats:</u></h3>
-<p>Speed: <input type = "text" name="npcs[speed]" value = "<%= @npc.speed%>"></p>
-<p>Melee Attacks: <input type = "text" name="npcs[melee]" value = "<%= @npc.melee%>"></p>
-<p>Ranged Attacks: <input type = "text" name="npcs[ranged]" value = "<%= @npc.ranged%>"></p>
-<p>Offensive Ability: <input type = "text" name="npcs[offense_ability]" value = "<%= @npc.offense_ability%>"></p>
-
-<h3><u>Ability Score Modifiers</u></h3>
-<p>1. <input type = "text" name="npcs[ability_mod1]" value = "<%= @npc.ability_mod1%>"></p>
-<p>2. <input type = "text" name="npcs[ability_mod2]" value = "<%= @npc.ability_mod2%>"></p>
-<p>3. <input type = "text" name="npcs[ability_mod3]" value = "<%= @npc.ability_mod3%>"></p>
-
-<h3><u>Skills:</u></h3>
-<p>Master Skill: <input type = "text" name="npcs[master_skill]" value = "<%=@npc.master_skill %>"></p>
-<p>Good Skill: <input type = "text" name="npcs[good_skill]" value = "<%= @npc.good_skill%>"></p>
-<p>Special Abilities: <input type = "text" name="npcs[special_ability]" value = "<%= @npc.special_ability%>"></p>
-
-<h3>3<u>Additional Notes/Info:</u></h3>
-<p>Gear/Loot: <input type = "text" name="npcs[gear]" value = "<%=@npc.gear %>"></p>
-<p>Any additional information: <input type = "text" name="npcs[optional_info]" value = "<%=@npc.optional_info %>"></p>
+    <h3><u>Saving Throws:</u></h3>
+    <li>Fortitude: <input type = "text" name="npcs[fort_save]" value = "<%= @npc.fort_save%>"></li>
+    <li>Reflex: <input type = "text" name="npcs[ref_save]" value = "<%= @npc.ref_save%>"></li>
+    <li>Will: <input type = "text" name="npcs[will_save]" value = "<%= @npc.will_save%>"></li>
 
 
+    <h3><u>Offensive Stats:</u></h3>
+    <li>Speed: <input type = "text" name="npcs[speed]" value = "<%= @npc.speed%>"></li>
+    <li>Melee Attacks: <input type = "text" name="npcs[melee]" value = "<%= @npc.melee%>"></li>
+    <li>Ranged Attacks: <input type = "text" name="npcs[ranged]" value = "<%= @npc.ranged%>"></li>
+    <li>Offensive Ability: <input type = "text" name="npcs[offense_ability]" value = "<%= @npc.offense_ability%>"></li>
+
+    <h3><u>Ability Score Modifiers</u></h3>
+    <p>1. <input type = "text" name="npcs[ability_mod1]" value = "<%= @npc.ability_mod1%>"></p>
+    <p>2. <input type = "text" name="npcs[ability_mod2]" value = "<%= @npc.ability_mod2%>"></p>
+    <p>3. <input type = "text" name="npcs[ability_mod3]" value = "<%= @npc.ability_mod3%>"></p>
+
+    <h3><u>Skills:</u></h3>
+    <li>Master Skill: <input type = "text" name="npcs[master_skill]" value = "<%=@npc.master_skill %>"></li>
+    <li>Good Skill: <input type = "text" name="npcs[good_skill]" value = "<%= @npc.good_skill%>"></li>
+    <li>Special Abilities: <input type = "text" name="npcs[special_ability]" value = "<%= @npc.special_ability%>"></li>
+
+    <h3><u>Additional Notes/Info:</u></h3>
+    <li>Gear/Loot: <input type = "text" name="npcs[gear]" value = "<%=@npc.gear %>"></li>
+    <li>Any additional information: <input type = "text" name="npcs[optional_info]" value = "<%=@npc.optional_info %>"></li>
+</ul>
 <input type = "submit" value = "Edit">
 </form>
