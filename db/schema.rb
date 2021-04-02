@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_051435) do
+ActiveRecord::Schema.define(version: 2021_04_02_232328) do
 
   create_table "npcs", force: :cascade do |t|
     t.string "name"
@@ -39,11 +39,12 @@ ActiveRecord::Schema.define(version: 2021_03_30_051435) do
     t.string "medical"
     t.string "magic_items"
     t.string "tech_items"
-    t.string "armor_weapons"
+    t.string "armor"
     t.string "loot"
     t.string "optional_info"
     t.integer "user_id"
     t.integer "rp"
+    t.string "other_equip"
     t.index ["user_id"], name: "index_npcs_on_user_id"
   end
 
