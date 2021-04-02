@@ -17,9 +17,8 @@ class CreateNpcs < ActiveRecord::Migration[6.1]
       t.integer :speed
       t.string :master_skill
       t.string :good_skill
-      t.string :ability_mod1
-      t.string :ability_mod2
-      t.string :ability_mod3
+      t.string :ability_scores
+      t.integer :ability_mods
       t.string :offense_ability
       t.string :defense_ability
       t.string :immunities
@@ -27,6 +26,7 @@ class CreateNpcs < ActiveRecord::Migration[6.1]
       t.string :ranged
       t.string :special_ability
       t.string :gear
+      t.string :loot
       t.string :optional_info
       t.belongs_to :user
     end
