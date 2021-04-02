@@ -1,7 +1,16 @@
-<h1>Creature Name: <%= @npc.name %>
+<style>
+h2{
+    color: blue;
+}
+</style>
+
+
+<h2>Creature Name: <%= @npc.name %>
      &nbsp; &nbsp; &nbsp; CR:<%= @npc.cr_rating%> 
      &nbsp; &nbsp; &nbsp; Level: <%= @npc.level %>
-     </h1>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+     <small><a href= '/npcs/<%=@npc.id%>/edit'>Edit NPC</a></small>
+     </h2>
      
      <ul>
         <h4><li>EXP for encounter: <%=@npc.exp%></li>
@@ -9,13 +18,15 @@
         <li>Class: <%= @npc.npc_class%></li></h4>
 
         <h3><u> Defensive Stats:</u></h3>
-
         <li>Hit Points: <%=@npc.hp%>; &nbsp; &nbsp; Resolve Points: <%= @npc.rp%></li>
         <li>Energy Armor Class: <%=@npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=@npc.kac%></li>
         <li>Defensive Ability: <%=@npc.defense_ability%></li>
         <li>Immunities: <%=@npc.immunities%></li>
-        <h4>Saving Throws:</h4>
-        <li>Fortitude: <%=@npc.fort_save%>; &nbsp; &nbsp; Reflex: <%=@npc.ref_save%>; &nbsp; &nbsp; Will: <%=@npc.will_save%></li>
+
+        <h3><u>Saving Throws:</u></h3>
+        <li>Fortitude: <%=@npc.fort_save%></li>
+        <li>Reflex: <%=@npc.ref_save%></li>
+        <li>Will: <%=@npc.will_save%></li>
      
 
         <h3><u>Offensive Stats:</u></h3>
@@ -41,8 +52,6 @@
 
     </ul>
     <br></br>
-    
-        <p><%puts%> <a href= '/npcs/<%= @npc.id%>/edit'>Edit</a> this npc.</p>
     
 
     <p><form action="/npcs/<%= @npc.id %>" method="POST">

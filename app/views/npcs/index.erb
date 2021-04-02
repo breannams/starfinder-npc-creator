@@ -1,15 +1,25 @@
+<style>
+h2{
+    color: blue;
+}
+</style>
 
-<h1>Your NPCs:</h1>
+
+
+
+<h1><u>Your NPCs:</u></h1>
 
 <% if @npcs.empty? %>
     You have no NPCs yet! You can create one <a href = '/npcs/new'>here </a>
-    <%else%>
+<%else%>
     <% @npcs.each do |npc| %>
-     <ol><p><h2>
+     <h2>
      Creature Name: <%= npc.name %>
      &nbsp; &nbsp; &nbsp; CR:<%= npc.cr_rating%> 
      &nbsp; &nbsp; &nbsp; Level: <%= npc.level %>
-     </ol></p></h2>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+     <small><a href= '/npcs/<%=npc.id%>/edit'>Edit NPC</a></small>
+     </h2>
      
      <ul>
         <h4><li>EXP for encounter: <%=npc.exp%></li>
@@ -20,10 +30,12 @@
 
         <li>Hit Points: <%=npc.hp%>; &nbsp; &nbsp; Resolve Points: <%= npc.rp%></li>
         <li>Energy Armor Class: <%=npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=npc.kac%></li>
-        <h4>Saving Throws:</h4>
-        <li>Fortitude: <%=npc.fort_save%>; &nbsp; &nbsp; Reflex: <%=npc.ref_save%>; &nbsp; &nbsp; Will: <%=npc.will_save%></li>
         <li>Defensive Ability: <%=npc.defense_ability%></li>
         <li>Immunities: <%=npc.immunities%></li>
+
+        <h3><u>Saving Throws:</u></h3>
+        <li>Fortitude: <%=npc.fort_save%>; &nbsp; &nbsp; Reflex: <%=npc.ref_save%>; &nbsp; &nbsp; Will: <%=npc.will_save%></li>
+      
 
         <h3><u>Offensive Stats:</u></h3>
         <li>Speed: <%= npc.speed%></li>
@@ -49,8 +61,7 @@
     </ul>
     <br></br>
     
-        <p><%puts%> <a href= '/npcs/<%=npc.id%>/edit'>Edit</a> this npc.</p>
-    
+     
 
     <p><form action="/npcs/<%= npc.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">

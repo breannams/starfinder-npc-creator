@@ -1,39 +1,55 @@
-<h1>Edit Your NPC</h1>
+<style>
+h1{
+    color: blue;
+}
+</style>
+
+
+<h1><u>Edit Your NPC</h1><u>
 
 <p><form action="/npcs/<%= @npc.id %>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-Basic Information:
+<h3><u>Basic Information:</u></h3>
 <p>Name: <input type = "text" name="npcs[name]" value = "<%=@npc.name%>"></p>
 <p>CR: <input type = "text" name="npcs[cr_rating]" value = "<%= @npc.cr_rating %>"></p>
 <p>Level:<input type = "text" name="npcs[level]" value = "<%=@npc.level%>"></p>
 <p>Experience points for encounter:<input type = "text" name="npcs[exp]" value = "<%= @npc.exp%>"></p>
 <p>Species: <input type = "text" name="npcs[species]" value = "<%= @npc.species%>"></p>
 <p>Class: <input type = "text" name="npcs[npc_class]" value = "<%= @npc.npc_class%>"></p>
+
+<h3><u>Defensive Stats:</u></h3>
 <p>Hp: <input type = "text" name="npcs[hp]" value = "<%= @npc.hp%>"></p>
+<p>Resolve Points: <input type = "text" name="npcs[rp]" value = "<%=@npc.rp %>"></p>
 <p>Energy Armor Class: <input type = "text" name="npcs[eac]" value = "<%= @npc.eac%>"></p>
 <p>Kinetic Armor Class:<input type = "text" name="npcs[kac]" value = "<%= @npc.kac%>"></p>
-    Saving Throws:
+<p>Defensive Ability: <input type = "text" name="npcs[defense_ability]" value = "<%= @npc.offense_ability%>"</p>
+<p>Immunities: <input type = "text" name="npcs[immunities]" value = "<%=@npc.immunities %>"></p>    
+
+<h3><u>Saving Throws:</u></h3>
 <p>Fortitude: <input type = "text" name="npcs[fort_save]" value = "<%= @npc.fort_save%>"></p>
 <p>Reflex: <input type = "text" name="npcs[ref_save]" value = "<%= @npc.ref_save%>"></p>
 <p>Will: <input type = "text" name="npcs[will_save]" value = "<%= @npc.will_save%>"></p>
-<p>Speed: <input type = "text" name="npcs[speed]" value = "<%= @npc.speed%>"></p>
-    Skills:
-<p>Master Skill: <input type = "text" name="npcs[master_skill]" value = "<%=@npc.master_skill %>"></p>
-<p>Good Skill: <input type = "text" name="npcs[good_skill]" value = "<%= @npc.good_skill%>"></p>
 
-    Ability Modifiers:
+
+<h3><u>Offensive Stats:</u></h3>
+<p>Speed: <input type = "text" name="npcs[speed]" value = "<%= @npc.speed%>"></p>
+<p>Melee Attacks: <input type = "text" name="npcs[melee]" value = "<%= @npc.melee%>"></p>
+<p>Ranged Attacks: <input type = "text" name="npcs[ranged]" value = "<%= @npc.ranged%>"></p>
+<p>Offensive Ability: <input type = "text" name="npcs[offense_ability]" value = "<%= @npc.offense_ability%>"></p>
+
+<h3><u>Ability Score Modifiers</u></h3>
 <p>1. <input type = "text" name="npcs[ability_mod1]" value = "<%= @npc.ability_mod1%>"></p>
 <p>2. <input type = "text" name="npcs[ability_mod2]" value = "<%= @npc.ability_mod2%>"></p>
 <p>3. <input type = "text" name="npcs[ability_mod3]" value = "<%= @npc.ability_mod3%>"></p>
-<p>Offensive Ability: <input type = "text" name="npcs[offense_ability]" value = "<%= @npc.offense_ability%>"></p>
-<p>Defensive Ability: <input type = "text" name="npcs[defense_ability]" value = "<%= @npc.offense_ability%>"</p>
-<p>Immunities: <input type = "text" name="npcs[immunities]" value = "<%=@npc.immunities %>"></p>
-<p>Melee Attacks: <input type = "text" name="npcs[melee]" value = "<%= @npc.melee%>"></p>
-<p>Ranged Attacks: <input type = "text" name="npcs[ranged]" value = "<%= @npc.ranged%>"></p>
-<p>Special Abilities<input type = "text" name="npcs[special_ability]" value = "<%= @npc.special_ability%>"></p>
+
+<h3><u>Skills:</u></h3>
+<p>Master Skill: <input type = "text" name="npcs[master_skill]" value = "<%=@npc.master_skill %>"></p>
+<p>Good Skill: <input type = "text" name="npcs[good_skill]" value = "<%= @npc.good_skill%>"></p>
+<p>Special Abilities: <input type = "text" name="npcs[special_ability]" value = "<%= @npc.special_ability%>"></p>
+
+<h3>3<u>Additional Notes/Info:</u></h3>
 <p>Gear/Loot: <input type = "text" name="npcs[gear]" value = "<%=@npc.gear %>"></p>
-<p>Resolve Points: <input type = "text" name="npcs[rp]" value = "<%=@npc.rp %>"></p>
 <p>Any additional information: <input type = "text" name="npcs[optional_info]" value = "<%=@npc.optional_info %>"></p>
 
 
