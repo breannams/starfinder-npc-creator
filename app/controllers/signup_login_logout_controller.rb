@@ -40,12 +40,12 @@ class SignupLoginLogoutController < ApplicationController
     end
 
     get '/users/home' do
-        @npcs = Npc.all
         if logged_in?
         @user = User.find(session[:user_id])
         erb :'/users/home'
         else
-          erb :'/users/error'
+          flash[:error] = "You must be logged in to see your npc creations!"
+          redirect to '/'
         end
     end
 

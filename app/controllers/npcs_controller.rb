@@ -15,7 +15,7 @@ class NpcController < ApplicationController
         if logged_in?
         erb :'npcs/new'
         else 
-            flash[:error] = "You must be logged in first."
+            flash[:error] = "You must be logged in to create an NPC."
             redirect to '/'
         end
     end
