@@ -1,36 +1,47 @@
-<h1>Create a new Npc</h1>
+<h1><u>Create a new Npc</u></h1>
 
 <form action= "/npcs" method = "POST">
+<h3>Basic Information: </h3>
 <p>Name: <input type = "text" name="npcs[name]"></p>
 <p>CR: <input type = "text" name="npcs[cr_rating]"></p>
 <p>Level:<input type = "text" name="npcs[level]"></p>
-<p>Experience points for encounter:<input type = "text" name="npcs[exp]"></p>
+<p>Experience points for encounter: <input type = "text" name="npcs[exp]"></p>
 <p>Species: <input type = "text" name="npcs[species]"></p>
 <p>Class: <input type = "text" name="npcs[npc_class]"></p>
+
+<h3> Defensive Stats:</h3>
 <p>Hp: <input type = "text" name="npcs[hp]"></p>
+<p>Resolve Points: <input type = "text" name="npcs[rp]"></p>
 <p>Energy Armor Class: <input type = "text" name="npcs[eac]"></p>
-<p>Kinetic Armor Class:<input type = "text" name="npcs[kac]"></p>
-    Saving Throws:
+<p>Kinetic Armor Class: <input type = "text" name="npcs[kac]"></p>
+<p>Defensive Ability: <input type = "text" name="npcs[defense_ability]"></p>
+<p>Immunities: <input type = "text" name="npcs[immunities]"></p>
+
+<h3>Saving Throws:</h3>
 <p>Fortitude: <input type = "text" name="npcs[fort_save]"></p>
 <p>Reflex: <input type = "text" name="npcs[ref_save]"></p>
 <p>Will: <input type = "text" name="npcs[will_save]"></p>
-<p>Speed: <input type = "text" name="npcs[speed]"></p>
-    Skills[choose 3, one is a master skill and 2 are good skills]
-<p>Master Skill: <input type = "text" name="npcs[master_skill]"></p>
-<p>Good Skill: <input type = "text" name="npcs[good_skill]"></p>
 
-    Ability Modifiers [choose up to 3 to get bonuses]
+<h3>Offensive Stats:</h3>
+<p>Speed: <input type = "text" name="npcs[speed]"></p>
+<p>Melee Attacks: <input type = "text" name="npcs[melee]"></p>
+<p>Ranged Attacks: <input type = "text" name="npcs[ranged]"></p>
+<p>Offensive Ability: <input type = "text" name="npcs[offense_ability]"></p>
+  
+<h3>Ability Score Modifiers [choose up to 3 to get bonuses]</h3>
 <p>1. <input type = "text" name="npcs[ability_mod1]"></p>
 <p>2. <input type = "text" name="npcs[ability_mod2]"></p>
 <p>3. <input type = "text" name="npcs[ability_mod3]"></p>
-<p>Offensive Ability: <input type = "text" name="npcs[offense_ability]"></p>
-<p>Defensive Ability: <input type = "text" name="npcs[defense_ability]"></p>
-<p>Immunities: <input type = "text" name="npcs[immunities]"></p>
-<p>Melee Attacks: <input type = "text" name="npcs[melee]"></p>
-<p>Ranged Attacks: <input type = "text" name="npcs[ranged]"></p>
-<p>Special Abilities<input type = "text" name="npcs[special_ability]"></p>
+
+
+<h3>Skills:</h3>
+<p>Master Skill: <input type = "text" name="npcs[master_skill]"></p>
+<p>Good Skill: <input type = "text" name="npcs[good_skill]"></p>
+<p>Special Abilities: <input type = "text" name="npcs[special_ability]"></p>
+
+
+<h3>Additional Notes/Info:</h3>
 <p>Gear/Loot: <input type = "text" name="npcs[gear]"</p>
-<p>Resolve Points: <input type = "text" name="npcs[rp]"></p>
 <p>Any additional information: <input type = "text" name="npcs[optional_info]"></p>
 
 

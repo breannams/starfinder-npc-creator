@@ -3,7 +3,7 @@
 <p><form action="/npcs/<%= @npc.id %>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-Basic Info:
+Basic Information:
 <p>Name: <input type = "text" name="npcs[name]" value = "<%=@npc.name%>"></p>
 <p>CR: <input type = "text" name="npcs[cr_rating]" value = "<%= @npc.cr_rating %>"></p>
 <p>Level:<input type = "text" name="npcs[level]" value = "<%=@npc.level%>"></p>
