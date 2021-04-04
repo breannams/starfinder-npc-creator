@@ -14,10 +14,11 @@ h2{
 <%else%>
     <% @npcs.each do |npc| %>
      <h2>
-     Creature Name: <%= npc.name %>
-     &nbsp; &nbsp; &nbsp; CR:<%= npc.cr_rating%> 
-     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
      <small><a href= '/npcs/<%=npc.id%>/edit'>Edit NPC</a></small>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+     Creature Name: <%= npc.name %>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+     CR:<%= npc.cr_rating%> 
      </h2>
      
      <ul>
@@ -28,6 +29,7 @@ h2{
         <h3><u> Defensive Stats:</u></h3>
 
         <li>Hit Points: <%=npc.hp%>; &nbsp; &nbsp; Resolve Points: <%= npc.rp%></li>
+        <li>Initiative: <%=npc.initiative%></li>
         <li>Energy Armor Class: <%=npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=npc.kac%></li>
         <li>Defensive Ability: <%=npc.defense_ability%></li>
         <li>Immunities: <%=npc.immunities%></li>
@@ -42,18 +44,26 @@ h2{
         <li>Ranged Attacks: <%= npc.ranged%></li>
         <li>Offensive Ability: <%=npc.offense_ability%></li>
 
-        <h3><u>Ability Score Modifiers:</u></h3>
-      
+        <h3><u>Ability Scores & Modifiers:</u></h3>
+        
+        <% @ability.each do |ability| %>
+            <li><%=ability.name %> + <%=ability.modifier%></li>
+        <%end%>
 
         <h3><u>Skills:</u></h3>
         <li>Master Skill: <%=npc.master_skill%></li>
         <li>Good Skill: <%=npc.good_skill%></li>
         <li>Special Ability: <%=npc.special_ability%></li>
         
+        <h3><u>Equipment</u></h3>
+        <li>Medical: <%= npc.medical%></li>
+        <li>Magic Items: <%=npc.magic_items%></li>
+        <li>Technological Items: <%=npc.tech_items%></li>
+        <li>Other: <%=npc.other_equip%></li>
+        <li>Loot: <%=npc.loot%></li>
     
-        <h3><u>Additional Notes/Info:</u></h3>
-      
-        <li>Any other notes: <%=npc.optional_info%></li>
+        <h3><u>Notes</u></h3>
+        <li>Notes: <%=npc.optional_info%></li>
 
     </ul>
     <br></br>

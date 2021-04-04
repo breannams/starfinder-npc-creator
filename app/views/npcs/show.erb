@@ -5,11 +5,15 @@ h2{
 </style>
 
 
-<h2>Creature Name: <%= @npc.name %>
-     &nbsp; &nbsp; &nbsp; CR:<%= @npc.cr_rating%> 
-     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-     <small><a href= '/npcs/<%=@npc.id%>/edit'>Edit NPC</a></small>
-     </h2>
+<h2>
+    <small><a href= '/npcs/<%=@npc.id%>/edit'>Edit NPC</a></small> 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+    Creature Name: <%= @npc.name %>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    CR:<%= @npc.cr_rating%> 
+   
+</h2>
      
      <ul>
         <h4><li>EXP for encounter: <%=@npc.exp%></li>
@@ -36,12 +40,10 @@ h2{
         <li>Ranged Attacks: <%= @npc.ranged%></li>         
         <li>Offensive Ability: <%=@npc.offense_ability%></li>
 
-        <h3><u>Ability Score Modifiers:</u></h3>           
-        <% @ability_scores.each do |ability| %>
-            <ol>
-        <li><%= ability.name%>  <%= ability.modifier%> </li>
-            </ol>
-        <%end%>
+        <h3><u>Ability Scores & Modifiers:</u></h3>           
+     
+        
+        
          
         <h3><u>Skills:</u></h3>
         <li>Master Skill: <%=@npc.master_skill%></li>
