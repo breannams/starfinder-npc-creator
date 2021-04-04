@@ -1,13 +1,13 @@
 class CreateNpcs < ActiveRecord::Migration[6.1]
   def change
-
     create_table :npcs do |t|
       t.string :name
       t.integer :cr_rating
       t.integer :exp
       t.string :species
-      t.string :class
+      t.string :npc_class
       t.integer :hp
+      t.integer :rp
       t.integer :eac
       t.integer :kac
       t.integer :fort_save
@@ -17,8 +17,6 @@ class CreateNpcs < ActiveRecord::Migration[6.1]
       t.integer :speed
       t.string :master_skill
       t.string :good_skill
-      t.string :ability_scores
-      t.integer :ability_mods
       t.string :offense_ability
       t.string :defense_ability
       t.string :immunities
@@ -28,7 +26,8 @@ class CreateNpcs < ActiveRecord::Migration[6.1]
       t.string :medical
       t.string :magic_items
       t.string :tech_items
-      t.string :armor_weapons
+      t.string :armor
+      t.string :other_equip
       t.string :loot
       t.string :optional_info
       t.belongs_to :user

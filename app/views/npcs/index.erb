@@ -16,7 +16,6 @@ h2{
      <h2>
      Creature Name: <%= npc.name %>
      &nbsp; &nbsp; &nbsp; CR:<%= npc.cr_rating%> 
-     &nbsp; &nbsp; &nbsp; Level: <%= npc.level %>
      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
      <small><a href= '/npcs/<%=npc.id%>/edit'>Edit NPC</a></small>
      </h2>
@@ -44,9 +43,7 @@ h2{
         <li>Offensive Ability: <%=npc.offense_ability%></li>
 
         <h3><u>Ability Score Modifiers:</u></h3>
-        <p>1. <%= npc.ability_mod1%><p>
-        <p>2. <%= npc.ability_mod2%><p>
-        <p>3. <%= npc.ability_mod3%><p>
+      
 
         <h3><u>Skills:</u></h3>
         <li>Master Skill: <%=npc.master_skill%></li>
@@ -55,7 +52,7 @@ h2{
         
     
         <h3><u>Additional Notes/Info:</u></h3>
-        <li>Gear: <%=npc.gear%></li>
+      
         <li>Any other notes: <%=npc.optional_info%></li>
 
     </ul>

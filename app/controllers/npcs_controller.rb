@@ -21,14 +21,20 @@ class NpcController < ApplicationController
     end
 
     post '/npcs' do
-        @npc = current_user.npcs.create(params[:npcs])
+        @npc = Npc.create(params[:npcs])
+
+        params[:npcs][:ability_scores].each do |details|
+            AbilityScores.new(details)
+        end
+        @ability_scores = AbilityScores.all
+
         if @npc.save
         redirect to "/npcs/#{@npc.id}"
         else
             redirect to '/npcs/new'
         end
     end
-
+  
     get '/npcs/:id' do
         @npc = Npc.find_by_id(params[:id])
         if logged_in? 

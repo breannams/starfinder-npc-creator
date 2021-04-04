@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_232328) do
+ActiveRecord::Schema.define(version: 2021_04_04_011632) do
+
+  create_table "ability_scores", force: :cascade do |t|
+    t.string "name"
+    t.integer "modifier"
+  end
 
   create_table "npcs", force: :cascade do |t|
     t.string "name"
@@ -19,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_04_02_232328) do
     t.string "species"
     t.string "npc_class"
     t.integer "hp"
+    t.integer "rp"
     t.integer "eac"
     t.integer "kac"
     t.integer "fort_save"
@@ -28,8 +34,6 @@ ActiveRecord::Schema.define(version: 2021_04_02_232328) do
     t.integer "speed"
     t.string "master_skill"
     t.string "good_skill"
-    t.string "ability_scores"
-    t.integer "ability_mods"
     t.string "offense_ability"
     t.string "defense_ability"
     t.string "immunities"
@@ -40,11 +44,10 @@ ActiveRecord::Schema.define(version: 2021_04_02_232328) do
     t.string "magic_items"
     t.string "tech_items"
     t.string "armor"
+    t.string "other_equip"
     t.string "loot"
     t.string "optional_info"
     t.integer "user_id"
-    t.integer "rp"
-    t.string "other_equip"
     t.index ["user_id"], name: "index_npcs_on_user_id"
   end
 

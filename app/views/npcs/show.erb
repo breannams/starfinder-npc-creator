@@ -7,7 +7,6 @@ h2{
 
 <h2>Creature Name: <%= @npc.name %>
      &nbsp; &nbsp; &nbsp; CR:<%= @npc.cr_rating%> 
-     &nbsp; &nbsp; &nbsp; Level: <%= @npc.level %>
      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
      <small><a href= '/npcs/<%=@npc.id%>/edit'>Edit NPC</a></small>
      </h2>
@@ -19,9 +18,11 @@ h2{
 
         <h3><u> Defensive Stats:</u></h3>
         <li>Hit Points: <%=@npc.hp%>; &nbsp; &nbsp; Resolve Points: <%= @npc.rp%></li>
-        <li>Energy Armor Class: <%=@npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=@npc.kac%></li>
+        <li>Initiative: <%=@npc.initiative%></li>
+        <li>Energy Armor Class: <%=@npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=@npc.kac%></li>   
         <li>Defensive Ability: <%=@npc.defense_ability%></li>
-        <li>Immunities: <%=@npc.immunities%></li>
+        <li>Immunity: <%= npc.immunities%></li>
+       
 
         <h3><u>Saving Throws:</u></h3>
         <li>Fortitude: <%=@npc.fort_save%></li>
@@ -31,24 +32,32 @@ h2{
 
         <h3><u>Offensive Stats:</u></h3>
         <li>Speed: <%= @npc.speed%></li>
-        <li>Melee Attacks: <%= @npc.melee%></li>
-        <li>Ranged Attacks: <%= @npc.ranged%></li>
-        <li>Offensive Ability: <%=@npc.offense_ability%></li>
+        <li>Melee Attacks: <%= npc.melee%></li>
+        <li>Ranged Attacks: <%= npc.ranged%></li>         
+        <li>Offensive Ability: <%=npc.offense_ability%></li>
 
-        <h3><u>Ability Score Modifiers:</u></h3>
-        <p>1. <%= @npc.ability_mod1%></p>
-        <p>2. <%= @npc.ability_mod2%></p>
-        <p>3. <%= @npc.ability_mod3%></p>
-
+        <h3><u>Ability Score Modifiers:</u></h3>           
+       
+        <li><%= npc.ability_scores%></li>
+     
+     
+         
         <h3><u>Skills:</u></h3>
         <li>Master Skill: <%=@npc.master_skill%></li>
-        <li>Good Skill: <%=@npc.good_skill%></li>
-        <li>Special Ability: <%=@npc.special_ability%></li>
-        
+        <li>Good Skill: <%=npc.good_skill%></li>
+           
+        <li>Special Ability: <%=npc.special_ability%></li>
     
-        <h3><u>Additional Notes/Info:</u></h3>
-        <li>Gear: <%=@npc.gear%></li>
-        <li>Any other notes: <%=@npc.optional_info%></li>
+        <h3><u>Equipment:</u></h3>
+        <li>Armor: <%= @npc.armor%></li>
+        <li>Medical: <%= @npc.medical%></li>
+        <li>Magic Items: <%= @npc.magic_items%></li>
+        <li>Technological Items: <%= @npc.tech_items%></li>
+        <li>Other Items: <%= @npc.other_equip%></li>
+        <li>Loot: <%= @npc.loot%></li>
+
+        <h3><u>Notes:</u></h3>
+        <li> <%=@npc.optional_info%></li>
 
     </ul>
     <br></br>
