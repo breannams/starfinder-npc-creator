@@ -21,7 +21,7 @@ h2{
         <li>Initiative: <%=@npc.initiative%></li>
         <li>Energy Armor Class: <%=@npc.eac%>; &nbsp; &nbsp; Kinetic Armor Class: <%=@npc.kac%></li>   
         <li>Defensive Ability: <%=@npc.defense_ability%></li>
-        <li>Immunity: <%= npc.immunities%></li>
+        <li>Immunity: <%= @npc.immunities%></li>
        
 
         <h3><u>Saving Throws:</u></h3>
@@ -32,21 +32,21 @@ h2{
 
         <h3><u>Offensive Stats:</u></h3>
         <li>Speed: <%= @npc.speed%></li>
-        <li>Melee Attacks: <%= npc.melee%></li>
-        <li>Ranged Attacks: <%= npc.ranged%></li>         
-        <li>Offensive Ability: <%=npc.offense_ability%></li>
+        <li>Melee Attacks: <%= @npc.melee%></li>
+        <li>Ranged Attacks: <%= @npc.ranged%></li>         
+        <li>Offensive Ability: <%=@npc.offense_ability%></li>
 
         <h3><u>Ability Score Modifiers:</u></h3>           
-       
-        <li><%= npc.ability_scores%></li>
-     
-     
+        <% @ability_scores.each do |ability| %>
+            <ol>
+        <li><%= ability.name%>  <%= ability.modifier%> </li>
+            </ol>
+        <%end%>
          
         <h3><u>Skills:</u></h3>
         <li>Master Skill: <%=@npc.master_skill%></li>
-        <li>Good Skill: <%=npc.good_skill%></li>
-           
-        <li>Special Ability: <%=npc.special_ability%></li>
+        <li>Good Skill: <%=@npc.good_skill%></li>
+        <li>Special Ability: <%=@npc.special_ability%></li>
     
         <h3><u>Equipment:</u></h3>
         <li>Armor: <%= @npc.armor%></li>

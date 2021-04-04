@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_011632) do
     t.integer "exp"
     t.string "species"
     t.string "npc_class"
+    t.string "ability_scores"
     t.integer "hp"
     t.integer "rp"
     t.integer "eac"

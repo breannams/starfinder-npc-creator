@@ -6,6 +6,7 @@ class CreateNpcs < ActiveRecord::Migration[6.1]
       t.integer :exp
       t.string :species
       t.string :npc_class
+      t.string :ability_scores
       t.integer :hp
       t.integer :rp
       t.integer :eac
