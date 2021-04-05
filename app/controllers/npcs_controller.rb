@@ -3,7 +3,6 @@ class NpcController < ApplicationController
     get '/npcs' do
         if logged_in?
             @npcs = current_user.npcs.all
-            @ability = AbilityScores.all
         erb :'npcs/index'
         else
             flash[:error] = "You must be logged in first."
@@ -22,13 +21,9 @@ class NpcController < ApplicationController
 
     post '/npcs' do
         @npc = current_user.npcs.create(params[:npcs])
-
-        params[:npcs][:ability_scores].each do |details|
-            AbilityScores.new(details)
-        end
-        @ability = AbilityScores.all
         
         if @npc.save
+  
         redirect to "/npcs/#{@npc.id}"
         else
             redirect to '/npcs/new'
@@ -38,10 +33,7 @@ class NpcController < ApplicationController
   
     get '/npcs/:id' do
         @npc = Npc.find_by_id(params[:id])
-        @ability = @npc.ability_scores
 
-        #binding.pry
-        #puts params
         if logged_in?
            
         erb :'npcs/show'
@@ -53,7 +45,7 @@ class NpcController < ApplicationController
 
     get '/npcs/:id/edit' do
         @npc = Npc.find_by_id(params[:id])
-        @ability_scores = AbilityScores.all
+       
         if logged_in?
         erb :'npcs/edit'
         else
