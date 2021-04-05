@@ -40,9 +40,12 @@ h1{
     <li>Offensive Ability: <input type = "text" name="npcs[offense_ability]" value = "<%= @npc.offense_ability%>"></li>
 
     <h3><u>Ability Score Modifiers</u></h3>
-    <p>1. <input type = "text" name="npcs[ability_scores][][name]"> + <input type = "text" name = "npcs[ability_scores][][modifier]"></p>
-    <p>2. <input type = "text" name="npcs[ability_scores][][name]"> + <input type = "text" name = "npcs[ability_scores][][modifier]"></p>
-    <p>3. <input type = "text" name="npcs[ability_scores][][name]"> + <input type = "text" name = "npcs[ability_scores][][modifier]"></p>
+    <li>Strength: <input type = "text" name= "npcs[str_mod]" value = "<%= @npc.str_mod%>"></li>
+    <li>Dexterity: <input type = "text" name= "npcs[dex_mod]" value = "<%=@npc.dex_mod%>"></li>
+    <li>Constitution: <input type = "text" name= "npcs[con_mod]" value = "<%=@npc.con_mod%>"></li>
+    <li>Intelligence: <input type = "type" name= "npcs[int_mod]" value = "<%= @npc.int_mod%>"></li>
+    <li>Wisdom: <input type = "type" name= "npcs[wis_mod]" value = "<%= @npc.wis_mod%>"></li>
+    <li>Charisma: <input type = "type" name= "npcs[char_mod]" value = "<%= @npc.char_mod %>"></li>
 
     <h3><u>Skills:</u></h3>
     <li>Master Skill: <input type = "text" name="npcs[master_skill]" value = "<%=@npc.master_skill %>"></li>
