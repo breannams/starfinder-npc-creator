@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_011632) do
+ActiveRecord::Schema.define(version: 2021_04_05_200850) do
 
   create_table "ability_scores", force: :cascade do |t|
     t.string "name"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2021_04_04_011632) do
     t.integer "exp"
     t.string "species"
     t.string "npc_class"
-    t.string "ability_scores"
     t.integer "hp"
     t.integer "rp"
     t.integer "eac"
@@ -49,6 +48,12 @@ ActiveRecord::Schema.define(version: 2021_04_04_011632) do
     t.string "loot"
     t.string "optional_info"
     t.integer "user_id"
+    t.integer "str_mod"
+    t.integer "dex_mod"
+    t.integer "con_mod"
+    t.integer "int_mod"
+    t.integer "wis_mod"
+    t.integer "char_mod"
     t.index ["user_id"], name: "index_npcs_on_user_id"
   end
 
