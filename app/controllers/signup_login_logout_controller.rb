@@ -24,7 +24,11 @@ class SignupLoginLogoutController < ApplicationController
     end
 
     get '/sessions/login' do
+        if !logged_in?
         erb :'sessions/login'
+        else
+        redirect to '/users/home'
+        end
     end
 
     post '/sessions' do
