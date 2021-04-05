@@ -3,6 +3,7 @@ class NpcController < ApplicationController
     get '/npcs' do
         if logged_in?
             @npcs = current_user.npcs.all
+
         erb :'npcs/index'
         else
             flash[:error] = "You must be logged in first."
