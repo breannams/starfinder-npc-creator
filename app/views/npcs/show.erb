@@ -6,9 +6,6 @@ h2{
 
 
 <h2>
-    <small><a href= '/npcs/<%=@npc.id%>/edit'>Edit NPC</a></small> 
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-
     Creature Name: <%= @npc.name %>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     CR:<%= @npc.cr_rating%> 
@@ -69,7 +66,11 @@ h2{
     <br></br>
     
 
-    <p><form action="/npcs/<%= @npc.id %>" method="POST">
+    <form action = "/npcs/<%= @npc.id%>/edit" method = "GET">
+    <input type = "submit" value = "edit">
+    </form>
+
+    <form action="/npcs/<%= @npc.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input type="submit" value="delete">
-    </form> </p>
+    </form>

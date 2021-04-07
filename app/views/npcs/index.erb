@@ -14,8 +14,6 @@ h2{
 <%else%>
     <% @npcs.each do |npc| %>
      <h2>
-     <small><a href= '/npcs/<%=npc.id%>/edit'>Edit NPC</a></small>
-     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
      Creature Name: <%= npc.name %>
      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
      CR:<%= npc.cr_rating%> 
@@ -71,11 +69,16 @@ h2{
     <br></br>
     
      
+    
+    
+    <form action= "/npcs/<%= npc.id %> method = "GET">
+        <input type = "submit" value = "Select">
+    </form>
 
-    <p><form action="/npcs/<%= npc.id %>" method="POST">
+    <form action="/npcs/<%= npc.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input type="submit" value="delete">
-    </form> </p>
+    </form> 
     <br></br>
     <br></br>
         <%end%>
