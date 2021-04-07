@@ -1,7 +1,12 @@
 @media screen {
     /* --- Reset Styles --- */
  
-  
+  h1 {
+    color:rgb(0, 3, 209)
+  }
+  h2 {
+    color:rgb(0, 3, 209)
+  }
     html, body {
       height: 100%;
       width: 100%;
@@ -35,11 +40,13 @@
     }
   
     h1 {
+
       font-size: 36px;
       line-height: 54px;
     }
   
     h2 {
+  
       border-bottom: 2px solid #ccc;
       font-size: 24px;
       line-height: 36px;
@@ -113,6 +120,7 @@
     }
   
     h2 {
+  
       font-size: 18px;
       line-height: 24px;
     }

@@ -1,16 +1,10 @@
-<style>
-h2{
-    color: blue;
-}
-</style>
 
-
-<h2>
+<h1>
     Creature Name: <%= @npc.name %>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     CR:<%= @npc.cr_rating%> 
    
-</h2>
+</h1>
      
      <ul>
         <h4><li>EXP for encounter: <%=@npc.exp%></li>
@@ -67,10 +61,12 @@ h2{
     
 
     <form action = "/npcs/<%= @npc.id%>/edit" method = "GET">
-    <input type = "submit" value = "edit">
+    <input type = "submit" value = "Edit">
     </form>
+    <br>
+    </br>
 
     <form action="/npcs/<%= @npc.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">
-        <input type="submit" value="delete">
+        <input type="submit" value="Delete">
     </form>
