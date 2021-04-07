@@ -14,7 +14,15 @@
       font-family: Sans-Serif;
       line-height: 18px;
     }
-  
+
+    .header {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 114%;
+      }
+
+
     .wrapper {
       background: rgb(247, 246, 245);
       -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
