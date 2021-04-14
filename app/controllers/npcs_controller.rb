@@ -35,19 +35,26 @@ class NpcController < ApplicationController
     get '/npcs/:id' do
         @npc = Npc.find_by_id(params[:id])
 
-        if logged_in?
-           
-        erb :'npcs/show'
+        if !logged_in?
+            flash[:error] = "You must be logged in first"
+                 redirect to '/sessions/login'
+        elsif !@npc
+            flash[:error] = "This NPC does not exist."
+            redirect to '/users/home'
+
+        elsif @npc.user != current_user
+            flash[:error] = "You do not have access to view this NPC."
+                redirect to '/users/home'
+
         else
-            flash[:error] = "You must be logged in first."
-            redirect to '/'
+                erb :'npcs/show'
         end
     end
 
     get '/npcs/:id/edit' do
         @npc = Npc.find_by_id(params[:id])
+        if @npc && @npc.user == current_user && logged_in?
        
-        if logged_in?
         erb :'npcs/edit'
         else
             flash[:error] = "You must be logged in first."
@@ -67,7 +74,9 @@ class NpcController < ApplicationController
 
     delete '/npcs/:id' do
        @npc = Npc.find_by_id(params[:id])
+        if @npc.user == current_user
        @npc.delete
+        end
         redirect to '/npcs'
     end
 
