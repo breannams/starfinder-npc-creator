@@ -5,19 +5,14 @@ This ruby Gem allows a user to open a website, sign up & login to create, edit, 
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'starfinder-npc-creator'
+Paste this code into your terminal in the folder you would like to save it in
+``` ruby
+git clone git@github.com:breannams/starfinder-npc-creator.git
 ```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install starfinder-npc-creator
+next cd into the folder
+```ruby
+cd starfinder-npc-creator
+```
 
 ## Usage
 
